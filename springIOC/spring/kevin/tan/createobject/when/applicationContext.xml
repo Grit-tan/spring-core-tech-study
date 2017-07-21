@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<!-- 当启动spring容器的时候，Spring容器配置文件中就已经创建对象了，还没有等到调用getBean方法
+		但是，这是不符合我们的需求的，一般都是当我们用到这个bean对象的时候才为我们创建对象
+		所以：lazy-init
+				default默认是false 
+				true ：当调用getBean方法的时候才开始创建对象~
+					优点：对于处理大数据量来说，节省内存    (内存负载和错误发现时期对比)
+				   	 缺点：当spring容器启动的时候，bean配置出错，当tomcat启动的时候发现不了错误，只有当创建对象之后才发现错误，这给调试带来了困难
+				false: 启动spring容器的时候就开始创建对象了：
+					优点：当启动tomcat容器的时候，如果spring配置有错误，就会导致tomcat异常启动，就能提前知道错误所在
+				 	 缺点：如果存在大数据量的情况，就会加重内存的加载负重
+		因此可以使用lazy-init来约束创建对象的时机		
+	-->
+   <bean id = "helloWorld" class="spring.kevin.tan.createobject.when.HelloWorld"></bean>
+   
+   <!--  factory-method 工厂方法，这是spring容器使用静态工作创建对象的方式-->
+	<bean id="helloWorld2" class="spring.kevin.tan.createobject.when.HelloWorldFactory"
+		  factory-method="getInstance" lazy-init="true">
+	</bean>
+</beans>           

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+           
+    <!-- 
+    	 如果设置abstract="true" 不会为这个类创建对象
+    
+     -->
+   <bean id="person" class="spring.kevin.tan.extend.Person" >
+   	  <property name="name" value="kevintan"></property>
+   </bean>
+   <!-- 
+   		parent 让子类拥父类的值
+    -->
+   <bean id="student" class="spring.kevin.tan.extend.Student" parent="person"></bean>
+</beans>

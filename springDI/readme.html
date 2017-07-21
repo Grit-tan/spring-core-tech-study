@@ -1,0 +1,29 @@
+springDI(依赖注入):给属性赋值就为依赖注入
+public class Person{
+    private Long pid;//代表基本类型的包装类
+    private String pname;//String类型
+    private Student student;//引用类型
+    private List lists;
+    private Set sets;
+    private Map map;
+    private Properties properties;
+    //set和get方法
+}
+
+ioc和di做了什么事情呢？
+  *  创建对象
+  *  给属性赋值
+
+ioc和di的意义：
+   可以在一个类中引入一个接口，而给接口赋值的工作交给spring容器来做，程序员只需要在配置文件做一些配置就可以了，这样在客户端做到了完全的面向接口编程
+   
+   
+注解---Annotation
+  * 必须依赖于类中的某一个部分
+  * 注解应该在类的哪些部位出现
+  * 自定义注解
+  * 了解jdk内置的注解
+  * 解析注解
+Annotation(注解)是JDK1.5及以后版本引入的。它可以用于创建文档，跟踪代码中的依赖性，甚至执行基本编译时检查。
+注解是以‘@注解名’在代码中存在的，根据注解参数的个数，我们可以将注解分为：标记注解、单值注解、完整注解三类。
+它们都不会直接影响到程序的语义，只是作为注解（标识）存在，我们可以通过反射机制编程实现对这些元数据（用来描述数据的数据）的访问。

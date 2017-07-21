@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<!-- 
+		beans
+			把一个类放入到spring容器中，该类成为bean
+			在这个配置中，spring容器要用默认的构造函数为HelloWorld创建对象
+	 -->
+ 	 <!-- 
+   		一个bean就代表一个类
+   	  	id就是唯一标识符
+     -->
+   <bean id="helloWorld" class="kevin.tan.hello.HelloWorld"></bean>
+   
+</beans>           

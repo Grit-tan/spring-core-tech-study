@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+   <!-- 
+   		默认情况下，spring实例化对象是单例模式
+   			scope
+   			    singleton 默认  单例
+   			    prototype  多例
+   			   当一个bean在多例模式下，lazy-init为false或者default的作用都无效,即当scope="prototype"多例模式下，一定是懒加载模式。
+     -->
+   <bean id="helloWorld" class="spring.kevin.tan.scope.HelloWorld" scope="prototype"></bean>
+	<!-- 
+		其他值： request、session、global session ，这些使用的时候首先要在初始化web的web.xml中做如下配置： 
+			    需要在web应用的XML声明文件web.xml中增加下述ContextListener即可
+		1.request
+			request表示该针对每一次HTTP请求都会产生一个新的bean，同时该bean仅在当前HTTP request内有效
+		2.session
+			session作用域表示该针对每一次HTTP请求都会产生一个新的bean，同时该bean仅在当前HTTP session内有效
+		3.global session作用域类似于标准的HTTP Session作用域，不过它仅仅在基于portlet的web应用中才有意义。Portlet规范定义了全局Session的概念，它被所有构成某个portlet web应用的各种不同的portlet所共享。
+		4.自定义bean装配作用域
+		
+		http://blog.csdn.net/mastermind/article/details/1932787
+	 -->
+
+</beans>

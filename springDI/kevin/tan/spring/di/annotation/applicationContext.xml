@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           	http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+  <!-- 
+  		1.导入命名空间
+  			xmlns:context="http://www.springframework.org/schema/context" 
+			http://www.springframework.org/schema/context 
+			http://www.springframework.org/schema/context/spring-context-2.5.xsd
+  		2.导入注解解析器
+  			<context:annotation-config></context:annotation-config>
+  		3.把Student和Person类导入进来 
+  		
+  -->         
+	<context:annotation-config></context:annotation-config>
+	<bean id="student" class="kevin.tan.spring.di.annotation.Student"></bean>
+	<bean id="person" class="kevin.tan.spring.di.annotation.Person"></bean>
+</beans>

@@ -8,7 +8,7 @@ import kevin.tan.salary.proxy.Privilege;
 import kevin.tan.salary.proxy.Security;
 
 /**
- * 代理类，基于实现jdk InvocationHandler 的代理类 
+ * 拦截器，基于实现jdk InvocationHandler 的拦截器 
  *
  */
 
